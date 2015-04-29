@@ -18,3 +18,8 @@ work when loading document from local disk.
 
 * how does `new` work in javascript
   * http://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript
+  * annoyingly, mitril wraps onclick with a try block and silently discards errors
+    * this code m("button", {onclick: function() {alert(foobar);}});
+    * should produce: Uncaught ReferenceError: foobar is not defined
+    * https://github.com/lhorie/mithril.js/blob/47cc6a7b0385854f39a2acea0c51cc/mithril.js#L477
+    * hacked together a simple debug-function thrw() to at least see the errors
