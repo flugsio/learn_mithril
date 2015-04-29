@@ -2,10 +2,15 @@
 <title>Test mithril</title>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/mithril/0.1.34/mithril.min.js"></script>
 <script>
-  var todo = {};
+var todo = {};
 
-  todo.Todo = function(data) {
-    this.description = m.prop(data.description);
-    this.done = m.prop(false);
-  };
+todo.Todo = function(data) {
+  this.description = m.prop(data.description);
+  this.done = m.prop(false);
+};
+
+todo.TodoList = Array;
+
+var myTask = new todo.Todo({description: "Write code"});
+//alert(myTask.description());
 </script>
