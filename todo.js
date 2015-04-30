@@ -47,9 +47,9 @@ todo.view = function() {
           onchange: m.withAttr("value", vm.description),
           value: vm.description()
         }),
-        m("button", {onclick: thrw(todo.vm.add), id: "hej"}, "Add"),
+        m("button", {onclick: vm.add, id: "hej"}, "Add"),
         m("table", [
-          todo.vm.list.map(function(task, index) {
+          vm.list.map(function(task, index) {
             return m("tr", [
                 m("td", [
                   m("input[type=checkbox]", {
